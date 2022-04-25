@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album szerkesztése</title>
+
+    <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+</head>  
+<body>
+    <div th:insert="~{shared/navBar :: navbar}"></div>
+    <!-- Edit -->
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4 mt-5">
+                <form method="post"
+                      th:action="@{/albums/edit}">
+                    <div class="form-group">
+                        <label for="name">Album modósító adatlap</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">ID</label>
+                        <input type="text"
+                               id="id"
+                               name="id"
+                               readonly
+                               class="form-control"
+                               th:value="${album.id}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Név</label>
+                        <input type="text"
+                               id="name"
+                               name="name"
+                               class="form-control"
+                               th:value="${album.name}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="artist">Előadó</label>
+                        <input type="text"
+                               id="artist"
+                               name="artist"
+                               class="form-control"
+                               th:value="${album.artist}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="genre">Műfaj</label>
+                        <input type="text"
+                               id="genre"
+                               name="genre"
+                               class="form-control"
+                               th:value="${album.genre}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="date">Dátum</label>
+                        <input type="text"
+                               id="date"
+                               name="date"
+                               class="form-control"
+                               th:value="${album.date}"/>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Leírás</label>
+                        <textarea id="description"
+                                  name="description"
+                                  rows="4"
+                                  spellcheck="false"
+                                  class="form-control"
+                                  th:text="${album.description}"></textarea>
+                    </div>
+                    <button class="btn btn-primary"
+                            type="submit">Módosít
+                    </button>
+                    <a th:href="@{/album/list.html}"
+                       class="btn btn-secondary"
+                       type="submit">Mégsem</a>
+                </form>
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>

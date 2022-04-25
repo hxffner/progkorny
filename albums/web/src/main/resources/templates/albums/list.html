@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Lista</title>
+
+    <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+</head>  
+<body>
+    <div th:insert="~{shared/navBar :: navbar}"></div>
+    <!-- List -->
+    <div class="container">
+        <h3 class="pt-5">Termékek listája</h3>
+    
+        <div th:insert="~{shared/message :: message}"></div>
+    
+        <table class="table table-striped pt-5">
+            <caption>Termékek listája</caption>
+            <thread>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Név</th>
+                    <th scope="col">Előadó</th>
+                    <th scope="col">Műfaj</th>
+                    <th scope="col">Dátum</th>
+                    <th scope="col">Leírás</th>
+                    <th scope="col">Műveletek</th>
+                </tr>
+            </thread>
+            <tbody>
+            <tr th:each="album: ${albums}">
+                <th scope="row"
+                    th:text="${album.id}"></th>
+                <td th:text="${album.name}"></td>
+                <td th:text="${album.artist}"></td>
+                <td th:text="${album.genre}"></td>
+                <td th:text="${album.date}"></td>
+                <td th:text="${album.description}">
+                <td>
+                    <a th:href="@{'/albums/' + ${album.id} + '/edit.html'}"
+                       type="button"
+                       class="btn btn-warning">Szerkesztés</a>
+                    <a th:href="@{'/albums/remove/' + ${album.id}}"
+                       type="button"
+                       class="btn btn-danger">Törlés</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
