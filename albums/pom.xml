@@ -183,7 +183,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/epam-nye-cooperation/epam-nye-progkor</url>
+            <url>https://maven.pkg.github.com/hxffner/progkorny</url>
         </repository>
     </distributionManagement>
 </project>
