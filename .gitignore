@@ -25,3 +25,7 @@ hs_err_pid*
 # Whitelist path to the runnable
 !web/target/
 
+# IntelliJ
+.DS_Store
+.idea
+*.iml
