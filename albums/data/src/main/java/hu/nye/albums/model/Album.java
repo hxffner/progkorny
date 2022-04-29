@@ -23,7 +23,7 @@ public class Album {
 
     private String artist;
 
-    private String genre;
+    private Genres genre;
 
     private String date;
 

@@ -2,6 +2,7 @@ package hu.nye.albums.model.request;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder;
+import hu.nye.albums.model.Genres;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -15,7 +16,7 @@ import lombok.ToString;
 public class AlbumRequest {
     private final String name;
     private final String artist;
-    private final String genre;
+    private final Genres genre;
     private final String date;
     private final String description;
 

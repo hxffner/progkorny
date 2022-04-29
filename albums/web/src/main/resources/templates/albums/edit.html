@@ -49,11 +49,19 @@
                     </div>
                     <div class="form-group">
                         <label for="genre">Műfaj</label>
-                        <input type="text"
-                               id="genre"
-                               name="genre"
-                               class="form-control"
-                               th:value="${album.genre}"/>
+                        <select id="genre"
+                                name="genre"
+                                class="form-control form-select">
+                            <option th:value="${T(hu.nye.albums.model.Genres).POP}"
+                                    th:text="Pop"
+                                    th:selected="${album.genre} == ${T(hu.nye.albums.model.Genres).POP} ? true : false"></option>
+                            <option th:value="${T(hu.nye.albums.model.Genres).ROCK}"
+                                    th:text="Rock"
+                                    th:selected="${album.genre} == ${T(hu.nye.albums.model.Genres).ROCK} ? true : false"></option>
+                            <option th:value="${T(hu.nye.albums.model.Genres).RAP}"
+                                    th:text="Rap"
+                                    th:selected="${album.genre} == ${T(hu.nye.albums.model.Genres).RAP} ? true : false"></option>
+                </select>
                     </div>
                     <div class="form-group">
                         <label for="date">Dátum</label>
