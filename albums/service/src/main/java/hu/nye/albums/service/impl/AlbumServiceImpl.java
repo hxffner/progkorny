@@ -1,9 +1,9 @@
-package hu.nye.albums.model.service.impl;
+package hu.nye.albums.service.impl;
 
 import hu.nye.albums.model.Album;
 import hu.nye.albums.model.dto.AlbumDTO;
 import hu.nye.albums.model.exception.NotFoundException;
-import hu.nye.albums.model.service.AlbumService;
+import hu.nye.albums.service.AlbumService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.converter.Converter;

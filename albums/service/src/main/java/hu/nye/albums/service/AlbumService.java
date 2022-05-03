@@ -1,4 +1,4 @@
-package hu.nye.albums.model.service;
+package hu.nye.albums.service;
 
 import hu.nye.albums.model.dto.AlbumDTO;
 
