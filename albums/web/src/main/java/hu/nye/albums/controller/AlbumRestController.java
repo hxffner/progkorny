@@ -3,7 +3,7 @@ package hu.nye.albums.controller;
 import hu.nye.albums.model.dto.AlbumDTO;
 import hu.nye.albums.model.request.AlbumRequest;
 import hu.nye.albums.model.response.AlbumResponse;
-import hu.nye.albums.model.service.AlbumService;
+import hu.nye.albums.service.AlbumService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.convert.converter.Converter;
