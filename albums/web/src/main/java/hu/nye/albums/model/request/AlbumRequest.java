@@ -8,6 +8,9 @@ import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
 
+/**
+ * Class for Album request.
+ */
 @Builder
 @EqualsAndHashCode
 @Getter
@@ -20,8 +23,4 @@ public class AlbumRequest {
     private final String date;
     private final String description;
 
-    @JsonPOJOBuilder(withPrefix = "")
-    public static class AlbumRequestBuilder {
-
-    }
 }

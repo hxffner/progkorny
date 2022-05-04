@@ -7,6 +7,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
 
+/**
+ * Converts DTO to AlbumResponse.
+ */
 @Component
 @Slf4j
 public class AlbumDtoToResponseConverter implements Converter<AlbumDTO, AlbumResponse> {

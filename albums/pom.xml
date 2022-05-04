@@ -22,6 +22,7 @@
     </modules>
 
     <properties>
+        <java.version>17</java.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -120,6 +121,34 @@
     <build>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>3.1.2</version>
+                <configuration>
+                    <configLocation>checkstyle.xml</configLocation>
+                    <encoding>UTF-8</encoding>
+                    <consoleOutput>true</consoleOutput>
+                    <failsOnError>true</failsOnError>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                        <version>9.0.1</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <id>validate</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
@@ -148,13 +177,13 @@
                 </executions>
                 <configuration>
                     <excludes>
-                        <exclude>hu\nye\progkor\warehouse\model\**</exclude>
-                        <exclude>hu\nye\progkor\warehouse\controller\**</exclude>
-                        <exclude>hu\nye\progkor\warehouse\WarehouseApplication.class</exclude>
-                        <exclude>hu\nye\progkor\warehouse\populator\**</exclude>
-                        <exclude>hu\nye\progkor\warehouse\repository\**</exclude>
-                        <exclude>hu\nye\progkor\warehouse\converter\**</exclude>
-                        <exclude>hu\nye\progkor\warehouse\config\**</exclude>
+                        <exclude>hu\nye\albums\model\**</exclude>
+                        <exclude>hu\nye\albums\controller\**</exclude>
+                        <exclude>hu\nye\albums\WarehouseApplication.class</exclude>
+                        <exclude>hu\nye\albums\populator\**</exclude>
+                        <exclude>hu\nye\albums\repository\**</exclude>
+                        <exclude>hu\nye\albums\converter\**</exclude>
+                        <exclude>hu\nye\albums\config\**</exclude>
                         <exclude>*Test</exclude>
                     </excludes>
                     <rules>

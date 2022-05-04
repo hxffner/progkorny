@@ -1,19 +1,24 @@
 package hu.nye.albums.service.impl;
 
+import java.util.List;
+import java.util.Optional;
+
 import hu.nye.albums.model.Album;
 import hu.nye.albums.model.dto.AlbumDTO;
 import hu.nye.albums.model.exception.NotFoundException;
+import hu.nye.albums.repository.AlbumRepository;
 import hu.nye.albums.service.AlbumService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Service;
-import hu.nye.albums.repository.AlbumRepository;
 
 
-import java.util.List;
-import java.util.Optional;
 
+
+/**
+ * Services for Albums. (getAllAlbums, getAlbum{id}, addAlbum, updateAlbum, deleteAlbum)
+ */
 @Service
 @RequiredArgsConstructor
 @Slf4j

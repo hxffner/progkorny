@@ -4,10 +4,12 @@ import hu.nye.albums.model.Album;
 import hu.nye.albums.model.dto.AlbumDTO;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.stereotype.Component;
 
-
+/**
+ * Converts DTOs to Entitites.
+ */
 @Component
 @Slf4j
 public class AlbumDtoToEntityConverter implements Converter<AlbumDTO, Album> {

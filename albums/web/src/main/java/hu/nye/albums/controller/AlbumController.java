@@ -1,28 +1,31 @@
 package hu.nye.albums.controller;
 
+import java.util.List;
+import javax.validation.ConstraintViolationException;
+
 import hu.nye.albums.model.dto.AlbumDTO;
+import hu.nye.albums.model.exception.NotFoundException;
 import hu.nye.albums.model.request.AlbumRequest;
 import hu.nye.albums.model.response.AlbumResponse;
 import hu.nye.albums.service.AlbumService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.convert.converter.Converter;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import javax.validation.ConstraintViolationException;
-import hu.nye.albums.model.exception.NotFoundException;
-import org.springframework.dao.DataIntegrityViolationException;
 
 
-
-
-
-
-import java.util.List;
-
+/**
+ * Controller file for Albums.
+ */
 @Controller
 @RequiredArgsConstructor
 @RequestMapping("/albums")
@@ -44,6 +47,13 @@ public class AlbumController {
         return "albums/add";
     }
 
+    /**
+     * addAlbum function.
+     *
+     * @param model represents org.springframework.ui Model.
+     * @param albumRequest represents album request.
+     * @return albums/add form
+     */
     @PostMapping(path = "/add", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String addAlbum(final Model model,
                                 final AlbumRequest albumRequest) {
@@ -58,6 +68,12 @@ public class AlbumController {
         return "albums/add.html";
     }
 
+    /**
+     * getAlbums List function.
+     *
+     * @param model represents org.springframework.ui Model.
+     * @return albums/list.
+     */
     @GetMapping(path = "/list.html")
     public String getAlbums(final Model model) {
         log.info("Retrieve all Albums.");
@@ -68,6 +84,14 @@ public class AlbumController {
         return "albums/list";
     }
 
+    /**
+     * albumUpdate function.
+     *
+     * @param redirectAttributes org.springframework.web.servlet.mvc.support Redirect Attributes.
+     * @param model represents org.springframework.ui Model.
+     * @param id represents album id.
+     * @return loads update form..
+     */
     @GetMapping(path = "/{id}/edit.html")
     public String albumEditForm(final RedirectAttributes redirectAttributes, final Model model, final @PathVariable("id") Long id) {
         log.info("Load Update form for Album with ID:{}.", id);
@@ -81,6 +105,16 @@ public class AlbumController {
             return REDIRECT_ALBUMS_LIST_HTML_ENDPOINT;
         }
     }
+
+    /**
+     * Updates album.
+     *
+     * @param redirectAttributes org.springframework.web.servlet.mvc.support Redirect Attributes.
+     * @param model represents org.springframework.ui Model.
+     * @param id represents album id.
+     * @param albumRequest represents album request.
+     * @return updated album.
+     */
 
     @PostMapping(value = "/edit", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String editAlbum(final RedirectAttributes redirectAttributes,
@@ -103,6 +137,13 @@ public class AlbumController {
         }
     }
 
+    /**
+     * Removes album.
+     *
+     * @param redirectAttributes org.springframework.web.servlet.mvc.support Redirect Attributes.
+     * @param id represents album id.
+     * @return removes album{id}.
+     */
     @GetMapping(path = "/remove/{id}")
     public String removeAlbum(final RedirectAttributes redirectAttributes, final @PathVariable("id") Long id) {
         log.info("Remove an Album with ID: {}.", id);

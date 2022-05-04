@@ -1,9 +1,13 @@
 package hu.nye.albums.service;
 
-import hu.nye.albums.model.dto.AlbumDTO;
-
 import java.util.List;
 
+import hu.nye.albums.model.dto.AlbumDTO;
+
+
+/**
+ * Interface for AlbumSevice.
+ */
 public interface AlbumService {
 
     List<AlbumDTO> getAllAlbums();

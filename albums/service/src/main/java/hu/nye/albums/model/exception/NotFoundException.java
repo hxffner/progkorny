@@ -2,6 +2,9 @@ package hu.nye.albums.model.exception;
 
 import java.io.Serial;
 
+/**
+ * NotFoundException.
+ */
 public class NotFoundException extends RuntimeException {
 
     @Serial

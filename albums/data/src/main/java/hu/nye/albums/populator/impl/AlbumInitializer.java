@@ -1,5 +1,7 @@
 package hu.nye.albums.populator.impl;
 
+import java.util.List;
+
 import hu.nye.albums.model.Album;
 import hu.nye.albums.model.Genres;
 import hu.nye.albums.populator.DBPopulator;
@@ -8,15 +10,18 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 
+/**
+ * Class that stores Album samples.
+ */
 @Component
 @Slf4j
 @Order(1)
 public class AlbumInitializer implements DBPopulator {
 
     private static final List<Album> ALBUMS = List.of(
-            new Album(1L, "To Pimp a Butterfly", 	"Kendrick Lamar", Genres.RAP, "15 March 2015", "political, conscious, poetic, concept album, protest, introspective, urban, male vocals, eclectic, passionate, religious, complex, spiritual, rhythmic, Christian, existential, progressive, serious, uplifting, epic, melancholic, dense")
+            new Album(1L, "To Pimp a Butterfly", "Kendrick Lamar", Genres.RAP, "15 March 2015",
+                    "political, conscious")
     );
 
     private final AlbumRepository albumRepository;
