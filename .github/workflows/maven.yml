@@ -49,5 +49,5 @@ jobs:
         uses: hxffner/progkorny@v1
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ${{ nye-progkorny-albums }}
-          heroku_email: ${{ hofi.marcell@gmail.com }}
+          heroku_app_name: "nye-progkorny-albums"
+          heroku_email: "hofi.marcell@gmail.com"
