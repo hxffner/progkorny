@@ -8,8 +8,6 @@ on:
     branches: [ main ]
     
 env:
-  DOCKER_REGISTRY: ghcr.io
-  DOCKER_IMAGE_NAME: ${{ github.repository }}
   HEROKU_APP_NAME: 'nye-progkorny-albums'
 
 jobs:
@@ -48,8 +46,8 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v2
       - name: Deploy to Heroku
-        uses: hxffner/progkorny@v2
+        uses: hxffner/progkorny@v1
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
-          heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          heroku_app_name: ${{ nye-progkorny-albums }}
+          heroku_email: ${{ hofi.marcell@gmail.com }}
