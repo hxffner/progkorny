@@ -14,7 +14,7 @@ public interface AlbumService {
 
     AlbumDTO getAlbum(Long id);
 
-    AlbumDTO addAlbum(AlbumDTO product);
+    AlbumDTO addAlbum(AlbumDTO album);
 
     AlbumDTO updateAlbum(Long id, AlbumDTO albumChanges);
 
