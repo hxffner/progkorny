@@ -5,7 +5,7 @@ spring:
   jpa:
     hibernate.ddl-auto: update
   datasource:
-    url: jdbc:h2:albums
+    url: jdbc:h2:mem:albums
     username: sa
     password: s3CR3T
     h2:
