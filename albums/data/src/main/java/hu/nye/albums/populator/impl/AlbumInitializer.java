@@ -22,7 +22,7 @@ public class AlbumInitializer implements DBPopulator {
     private static final List<Album> ALBUMS = List.of(
             new Album(1L, "To Pimp a Butterfly", "Kendrick Lamar", Genres.RAP, "2015",
                     "political, conscious"),
-            new Album(2L,"Hybrid Theory","Linkin Park", Genres.ROCK,"2000",
+            new Album(2L, "Hybrid Theory", "Linkin Park", Genres.ROCK, "2000",
                     "angry, energetic")
     );
 
