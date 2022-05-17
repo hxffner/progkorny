@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,17 +12,18 @@
     <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
     <script th:src="@{/webjars/bootstrap/5.1.3/js/bootstrap.min.js}"></script>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>  
-<body>
+<body class="bg-dark">
     <div th:insert="~{shared/navBar :: navbar}"></div>
     <!-- List -->
     <div class="container">
-        <h3 class="pt-5">Termékek listája</h3>
+        <h3 class="pt-5 text-white">Albumok listája</h3>
     
         <div th:insert="~{shared/message :: message}"></div>
     
-        <table class="table table-striped pt-5">
-            <caption>Termékek listája</caption>
+        <table class="table table-dark table-striped pt-5">
+            <caption>Albumok listája</caption>
             <thread>
                 <tr>
                     <th scope="col">#</th>

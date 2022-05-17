@@ -20,8 +20,10 @@ import org.springframework.stereotype.Component;
 public class AlbumInitializer implements DBPopulator {
 
     private static final List<Album> ALBUMS = List.of(
-            new Album(1L, "To Pimp a Butterfly", "Kendrick Lamar", Genres.RAP, "15 March 2015",
-                    "political, conscious")
+            new Album(1L, "To Pimp a Butterfly", "Kendrick Lamar", Genres.RAP, "2015",
+                    "political, conscious"),
+            new Album(2L,"Hybrid Theory","Linkin Park", Genres.ROCK,"2000",
+                    "angry, energetic")
     );
 
     private final AlbumRepository albumRepository;
